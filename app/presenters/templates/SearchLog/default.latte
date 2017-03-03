@@ -1,0 +1,29 @@
+{block content}
+
+<ul class="navig">
+<li><a n:href="Homepage:default">Zpět</a></li>
+</ul>
+
+<h2>Seznam hledání</h2>
+
+<div class="logs">
+    {foreach $items as $item}
+    <div class="log">
+        <div>Čas: {$item->time}</div>
+        <div>IP: {$item->ip}</div>
+        <div>Text: {$item->text}</div>
+    </div>
+    {/foreach}
+</div>
+
+<div class="pages">
+	{for $i = 1; $i <= $totalPosts; $i++}
+		{if $i == $page}
+			<div class="page">{$i}</div>
+		{else}
+			 <div class="page"><a href="{link SearchLog:default $i}">{$i}</a></div>
+		{/if}
+	{/for}
+</div>
+
+{/block}

@@ -1,0 +1,18 @@
+{block content}
+
+<ul class="navig">
+    <li><a n:href="SearchLog:default">Seznam hledání</a></li>
+    {if $user->loggedIn}
+		<li><a n:href="SearchAdmin:default">Správa seznamu hledání</a></li>
+        <li><a n:href="Sign:out">Odhlásit</a></li>
+    {else}
+        <li><a n:href="Sign:in">Přihlásit - Správa seznamu hledání</a></li>
+    {/if}
+</ul>
+
+<h2>Vyhledat repozitáře</h2>
+
+{control commentForm}
+
+
+{/block}

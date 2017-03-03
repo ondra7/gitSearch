@@ -1,0 +1,20 @@
+{block content}
+
+<ul class="navig">
+	<li><a n:href="Homepage:default">Zpět</a></li>
+</ul>
+
+<h2>Výsledky vyhledávání</h2>
+
+{foreach $items as $item}
+<div class="app">
+	<div>id: {$item->id}</div>
+	<div>Název: {$item->name}</div>
+	<div><a href="{$item->html_url}">Odkaz na repozitář</a></div>
+	<div>Vytvořen: {$item->created_at}</div>
+	<div>Aktualizován: {$item->updated_at}</div>
+	<div>Velikost: {$item->size}</div>
+</div>
+{/foreach}
+
+{/block}
